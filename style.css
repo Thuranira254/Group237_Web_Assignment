@@ -27,36 +27,40 @@ header {
     background: #0d1b2a;
     color: #fff;
     padding: 20px 0;
+    position: relative;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between logo and navigation */
+    align-items: center; /* Vertically center items */
 }
 
+/* Logo */
 header .logo {
-    float: left;
     font-size: 24px;
     font-weight: bold;
+    color: #fff;
+    text-decoration: none;
 }
 
+/* Navigation */
 header nav {
-    display: none;
-    width: 100%;
-    background: #0d1b2a;
-    position: absolute;
-    top: 70px;
-    left: 0;
+    display: flex;
+    align-items: center;
 }
 
-header nav.active {
+/* Menu Toggle (Hamburger Icon) */
+.menu-toggle {
     display: block;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: auto; /* Push the toggle to the right */
 }
 
+/* Navigation Links */
 header ul {
     list-style: none;
-    text-align: center;
-    padding: 20px 0;
-}
-
-header ul li {
-    display: block;
-    margin: 15px 0;
+    display: flex;
+    gap: 20px; /* Add spacing between links */
 }
 
 header ul li a {
@@ -70,30 +74,50 @@ header ul li a:hover {
     color: #00b894;
 }
 
-.menu-toggle {
-    display: block;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-    float: right;
-    margin-right: 20px;
-}
-
 .btn {
     background: #00b894;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-radius: 30px;
     text-decoration: none;
     color: #fff;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-secondary {
     border: 2px solid #00b894;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-radius: 30px;
     text-decoration: none;
     color: #00b894;
     margin-left: 10px;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Buttons Container */
+.buttons {
+    display: flex; /* Align buttons horizontally */
+    gap: 10px; /* Add spacing between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    margin-top: 20px; /* Add spacing above the buttons */
+}
+
+/* Ensure buttons don't overlap on smaller screens */
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center align buttons */
+    }
+
+    .btn, .btn-secondary {
+        width: 100%; /* Make buttons full width */
+        max-width: 300px; /* Optional: Limit the button width */
+    }
 }
 
 /* Home Section */
@@ -105,21 +129,29 @@ header ul li a:hover {
 }
 
 .home-content {
-    color: #fff;
+    text-align: center; /* Center-align the content */
+    margin-top: 50px; /* Add spacing from the top */
 }
 
 .home-content h2 {
-    font-size: 36px;
+    font-size: 36px; /* Adjust font size */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    color: #fff;
 }
 
 .home-content h3 {
-    font-size: 28px;
-    margin: 10px 0;
+    font-size: 28px; /* Adjust font size */
+    margin-bottom: 20px; /* Add spacing below the subheading */
+    color: #00b894; /* Optional: Add a different color for contrast */
 }
 
 .home-content p {
-    margin: 20px 0;
-    max-width: 500px;
+    margin: 20px 0; /* Add spacing above and below the paragraph */
+    max-width: 600px; /* Limit the width of the paragraph */
+    color: #fff;
+    line-height: 1.6; /* Improve readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* About Section */
@@ -142,4 +174,16 @@ header ul li a:hover {
 .about-content p {
     color: #555;
     font-size: 18px;
+}
+
+/* Name Box */
+.name-box {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 20px 30px; /* Add padding inside the box */
+    border: 2px solid #00b894; /* Add a border */
+    border-radius: 10px; /* Rounded corners */
+    display: inline-block; /* Ensure the box wraps around the content */
+    color: #fff; /* Text color */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Add spacing below the box */
 }
